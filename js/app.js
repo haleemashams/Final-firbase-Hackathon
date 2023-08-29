@@ -1,30 +1,33 @@
 const app = firebase.initializeApp(firebaseConfig);
 console.log(app)
 
-const signup = () => {
+const Register= () => {
     let username = document.getElementById('username').value;
-    let contact = document.getElementById('contact').value;
+    let lastname = document.getElementById('lastname').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
+    let repassword = document.getElementById('repassword').value;
     let role = 'User'
 
-    console.log(email, password)
+    console.log(username, lastname, email, password )
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             let user = userCredential.user;
             firebase.database().ref('users/' + user.uid).set({
                 uid: user.uid,
                 username: username,
+                lastname: lastname,
                 role: role,
-                contact: contact,
                 email: email,
-                password: password
+                password: password,
+                repassword:repassword,
+
             })
                 .then(() => {
                     const user = { email: email };
                     localStorage.setItem('user', JSON.stringify(user));
                     alert('User created successfully.')
-                    window.location.href = '../html files/checkout.html'
+                    window.location.href ='../pages/dashboard/dashboard.html'
                 })
                 .catch((error) => {
                     alert(error);
@@ -54,7 +57,7 @@ const signup = () => {
 
 
 
-const signin = () => {
+const Login= () => {
     let email = document.getElementById('email').value
     let password = document.getElementById('password').value
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -69,12 +72,12 @@ const signin = () => {
                         const user = { email: email };
                         localStorage.setItem('user', JSON.stringify(user));
                         alert('User created successfully.')
-                        window.location.href = '../html files/page13.html'
+                       window.location.href='../pages/dashboard/dashboard.html'
                     }
                     else {
                         const user = { email: email };
                         localStorage.setItem('user', JSON.stringify(user));
-                        window.location.href = '../html files/page13.html'
+                        window.location.href = '../pages/dashboard/dashboard.html'
                     }
                 } else {
                     alert("No data available");

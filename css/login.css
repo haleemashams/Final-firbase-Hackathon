@@ -63,7 +63,7 @@ main {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
-.login-form-container button {
+.btn2 button {
     background-color: #7749f8;
     color: #fff;
     border: 1px solid #7749f8;
@@ -86,7 +86,7 @@ main {
     font-size: 15px;
 }
 
-.login-form-container button:hover {
+.btn2 button:hover {
     background-color: #6e4ad1;
     border-color: #6e4ad1;
 }
