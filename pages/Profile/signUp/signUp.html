@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Register</title>
+    <link rel="stylesheet" href="../../css/signUp.css">
+</head>
+
+<body>
+
+    <!-- Navbar Component -->
+    <header>
+        <div class="logo-parent">
+            <a href="../../index.html" class="logo">Personal Blogging App</a>
+        </div>
+        <ul  class="links">
+            <li >
+                <a  href="../login/login.html">Login</a>
+            </li>
+            <li >
+                <a href="../../../dashboard/dashboard.html">Dashborad</a>
+            </li>
+        </ul>
+    </header>
+    <nav class="navbar">
+        <h1 class="main-heading">Sign Up</h1>
+    </nav>
+    <main>
+        <form class="login-form-container">
+            <label for="file">Select a Picture</label>
+            <input type="text" placeholder="First Name" required name="fname" id="username">
+            <input type="text" placeholder="Last Name" required name="lname" id="lastname">
+            <input type="email" placeholder="Email" required name="email" id="email">
+            <input type="password" placeholder="Password" required name="password" id="password">
+            <input type="password" placeholder="Repeat Password" required name="rpassword" id="repassword">
+            <!-- <input type="file" style="display: none;" id="file"> -->
+     </form>
+    </main>
+
+
+            <button onclick="Register()">Register</button>
+   
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+<script src="../../config.js"></script>
+<script src="../../app.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="../../js/signUp.js"></script> -->
+</body>
+
+</html>
